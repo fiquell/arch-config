@@ -1,0 +1,16 @@
+# Enable colored completion prefix and stats display
+set colored-completion-prefix on
+set colored-stats on
+
+# Ignore case during completion and show all options if ambiguous
+set completion-ignore-case on
+set show-all-if-ambiguous on
+
+$if Bash
+  # In bash only, enable "magic space" so that typing space will show
+  # completions. i.e. !!_ (where _ is space) will expand !! for you.
+  Space: magic-space
+$endif
+
+# Jump up directories
+Control-n: "cd ..\n"

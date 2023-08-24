@@ -1,0 +1,8 @@
+[user]
+  name = Fiquell
+  email = fiquellh@gmail.com
+[alias]
+  lg = log --all --oneline --graph
+  st = status --short --branch
+[init]
+  defaultBranch = main
