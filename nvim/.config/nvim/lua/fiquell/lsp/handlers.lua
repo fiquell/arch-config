@@ -33,12 +33,12 @@ M.setup = function()
   })
 end
 
-local augroup = vim.api.nvim_create_augroup("LspFormatting", { clear = true })
 M.on_attach = function(client, bufnr)
+  local format_document = vim.api.nvim_create_augroup("FormatDocument", { clear = true })
   if client.supports_method("textDocument/formatting") then
-    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+    vim.api.nvim_clear_autocmds({ group = format_document, buffer = bufnr })
     vim.api.nvim_create_autocmd("BufWritePre", {
-      group = augroup,
+      group = format_document,
       buffer = bufnr,
       callback = function()
         lsp_formatting(bufnr)
