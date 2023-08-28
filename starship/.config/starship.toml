@@ -1,7 +1,21 @@
+format = """
+$git_branch\
+$git_state\
+$git_status\
+$directory\
+$cmd_duration\
+"""
+
 add_newline = false
 
-[character]
-disabled = true
+[git_branch]
+format = "[$symbol$branch]($style) "
 
-[line_break]
-disabled = true
+[git_status]
+format = "[$all_status$ahead_behind]($style) "
+
+[directory]
+format = "[$path]($style) "
+
+[cmd_duration]
+format = "underwent [$duration]($style) "
