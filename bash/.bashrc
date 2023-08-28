@@ -2,37 +2,21 @@
 #
 # Fiquell's bash environment
 
-# Environment variables
-export EDITOR="nvim"
-export HISTCONTROL="erasedups:ignorespace"
-export MANPAGER="nvim +Man!"
-export FZF_DEFAULT_OPTS="--reverse --margin 20% --info inline-right \
-  --color 16,bg+:#1a1b26"
-
-# Path
-function set_path() {
-  [[ $(id -u) -ge 1000 ]] || return
-
-  for i in "$@"; do
-    export PATH="$i:${PATH}"
-  done
-}
-
-set_path scripts "$HOME"/bin "$HOME"/.local/bin "$HOME"/.cargo/bin
+# Welcome message
+fm6000 --random --color random
 
 # Prompt
 eval "$(starship init bash)"
 
-# Aliases / Functions
-alias :q="exit"
-alias cat="bat -pp --theme ansi"
+# Aliases
+alias cat="bat --theme base16 --style changes,numbers"
 alias cs="xclip -selection clipboard"
 alias grep="grep --color=always"
-alias la="ls --almost-all"
-alias ll="ls --almost-all --human-readable -l"
-alias ls="ls -v --color=always --group-directories-first"
-alias lt="tree -aCI '.git|node_modules' --dirsfirst"
-alias vim="nvim"
+
+# Changed "ls" to "exa"
+alias ls="exa --all --long --color=always --group-directories-first"
+alias la="exa --all --color=always --group-directories-first"
+alias lt="exa --all --tree --color=always --group-directories-first"
 
 # Git related commands
 alias ga="git add"
@@ -44,14 +28,3 @@ alias gs="git st"
 alias gpl="git pull"
 alias gps="git push"
 alias gco="git checkout"
-
-# Change directory while displaying directory contents
-function cd() {
-  builtin cd "$@" && la
-}
-
-# Create a directory and move into it
-function mc() {
-  mkdir -p "$1"
-  cd "$1" || return
-}
