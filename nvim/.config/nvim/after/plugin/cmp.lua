@@ -20,8 +20,14 @@ cmp.setup({
     documentation = cmp.config.window.bordered(),
   },
   mapping = cmp.mapping.preset.insert({
-    ["<C-Space>"] = cmp.mapping.complete(),
     ["<CR>"] = cmp.mapping.confirm(),
+    ["<C-g>"] = function()
+      if cmp.visible_docs() then
+        cmp.close_docs()
+      else
+        cmp.open_docs()
+      end
+    end,
   }),
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
@@ -31,6 +37,11 @@ cmp.setup({
     { name = "path" },
     { name = "cmdline" },
   }),
+  view = {
+    docs = {
+      auto_open = false,
+    },
+  },
 })
 
 cmp.setup.cmdline({ "/", "?" }, {
