@@ -1,12 +1,9 @@
-format = """
-$git_branch\
-$git_state\
-$git_status\
-$directory\
-$cmd_duration\
-"""
-
+format = "$directory"
+right_format = "$git_branch$git_state$git_status$cmd_duration$time"
 add_newline = false
+
+[directory]
+format = "[$path](blue bold) "
 
 [git_branch]
 format = "[$symbol$branch]($style) "
@@ -14,8 +11,7 @@ format = "[$symbol$branch]($style) "
 [git_status]
 format = "[$all_status$ahead_behind]($style) "
 
-[directory]
-format = "[$path]($style) "
-
-[cmd_duration]
-format = "underwent [$duration]($style) "
+[time]
+disabled = false
+format = "[$time]($style)"
+time_format = "%R"
