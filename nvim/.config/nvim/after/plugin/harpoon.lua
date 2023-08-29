@@ -14,8 +14,8 @@ harpoon.setup({
   },
 })
 
-vim.keymap.set("n", "<A-a>", mark.add_file)
-vim.keymap.set("n", "<S-m>", ui.toggle_quick_menu)
+vim.keymap.set("n", "<C-a>", mark.add_file)
+vim.keymap.set("n", "<C-m>", ui.toggle_quick_menu)
 
 for i = 1, 5 do
   vim.keymap.set("n", tostring(i), function()
