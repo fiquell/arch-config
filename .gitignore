@@ -1,0 +1,3 @@
+fish/.config/fish/*
+!config.fish
+packer_compiled.lua
