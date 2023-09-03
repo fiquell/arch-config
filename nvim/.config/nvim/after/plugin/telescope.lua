@@ -14,6 +14,8 @@ telescope.setup({
   },
 })
 
+vim.keymap.set("n", "<C-f>", builtin.current_buffer_fuzzy_find)
+vim.keymap.set("n", "<C-g>", builtin.live_grep)
 vim.keymap.set("n", "<C-p>", builtin.find_files)
 vim.keymap.set("n", "<C-t>", builtin.builtin)
 vim.keymap.set("n", "<Space>gb", builtin.git_branches)

@@ -2,12 +2,11 @@ vim.g.netrw_banner = 0
 
 vim.opt.clipboard = "unnamedplus"
 vim.opt.colorcolumn = "80"
-vim.opt.ignorecase = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 10
 vim.opt.showmode = false
-vim.opt.sidescrolloff = 10
+vim.opt.sidescrolloff = 60
 vim.opt.signcolumn = "yes"
 vim.opt.swapfile = false
 vim.opt.termguicolors = true
