@@ -1,5 +1,5 @@
-format = "$directory"
-right_format = "$git_branch$git_state$git_status$cmd_duration$time"
+format = "$directory$cmd_duration"
+right_format = "$git_branch$git_state$git_status$time"
 add_newline = false
 
 [directory]
@@ -14,4 +14,4 @@ format = "([$all_status$ahead_behind]($style) )"
 [time]
 disabled = false
 format = "[$time]($style)"
-time_format = "%R"
+time_format = "%a %d %b %Y %r"
