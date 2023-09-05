@@ -15,6 +15,7 @@ return packer.startup({
     use("numToStr/Comment.nvim")
     use("folke/neodev.nvim")
     use("lukas-reineke/indent-blankline.nvim")
+    use("stevearc/oil.nvim")
     use({ "codota/tabnine-nvim", run = "./dl_binaries.sh" })
     use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install" })
 

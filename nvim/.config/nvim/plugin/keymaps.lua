@@ -1,5 +1,4 @@
 vim.keymap.set("n", "<Esc>", vim.cmd.nohlsearch)
-vim.keymap.set("n", "<S-e>", vim.cmd.Explore)
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
