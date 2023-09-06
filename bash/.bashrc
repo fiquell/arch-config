@@ -2,6 +2,12 @@
 #
 # Fiquell's bash environment
 
+# Replaces current shell process with Fish shell
+if command -v fish &>/dev/null; then
+  SHELL=$(command -v fish)
+  exec "$SHELL"
+fi
+
 # Aliases
 alias cat="bat --theme base16 --style changes,numbers"
 alias cs="xclip -selection clipboard"
