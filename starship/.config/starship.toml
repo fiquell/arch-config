@@ -1,5 +1,5 @@
 format = "$directory$cmd_duration"
-right_format = "$git_branch$git_state$git_status$time"
+right_format = "$git_branch$git_status$time"
 add_newline = false
 
 [directory]

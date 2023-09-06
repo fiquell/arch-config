@@ -2,12 +2,6 @@
 #
 # Fiquell's bash environment
 
-# Welcome message
-fm6000 --random --color random
-
-# Prompt
-eval "$(starship init bash)"
-
 # Aliases
 alias cat="bat --theme base16 --style changes,numbers"
 alias cs="xclip -selection clipboard"
