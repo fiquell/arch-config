@@ -10,11 +10,12 @@ lualine.setup({
     theme = "tokyonight",
     component_separators = "",
     section_separators = "",
+    globalstatus = true,
   },
   sections = {
     lualine_a = { "mode" },
     lualine_b = { "branch" },
-    lualine_c = { "diff", "filename" },
+    lualine_c = { "diff", "diagnostics", "filename" },
     lualine_x = { "filesize", "encoding", "fileformat", "filetype" },
     lualine_y = { "progress" },
     lualine_z = { "location" },

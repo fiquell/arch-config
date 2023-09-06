@@ -35,7 +35,6 @@ return packer.startup({
 
     use("L3MON4D3/LuaSnip")
     use("saadparwaiz1/cmp_luasnip")
-    use("rafamadriz/friendly-snippets")
 
     use("williamboman/mason.nvim")
     use("williamboman/mason-lspconfig.nvim")

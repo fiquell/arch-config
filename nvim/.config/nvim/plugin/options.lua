@@ -1,5 +1,3 @@
-vim.g.netrw_banner = 0
-
 vim.opt.clipboard = "unnamedplus"
 vim.opt.colorcolumn = "80"
 vim.opt.number = true

@@ -20,9 +20,6 @@ if not has_lsp then
   return
 end
 
-local client_capabilities = vim.lsp.protocol.make_client_capabilities()
-client_capabilities.textDocument.completion.completionItem.snippetSupport = true
-
 local M = {}
 
 M.setup = function()
@@ -48,6 +45,6 @@ M.on_attach = function(client, bufnr)
   end
 end
 
-M.capabilities = lsp.default_capabilities(client_capabilities)
+M.capabilities = lsp.default_capabilities()
 
 return M

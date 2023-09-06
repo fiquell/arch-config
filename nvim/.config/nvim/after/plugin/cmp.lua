@@ -6,8 +6,7 @@ if not has_cmp and not has_autopairs and not has_luasnip then
   return
 end
 
-local completion_cmp = require("nvim-autopairs.completion.cmp")
-local from_vscode = require("luasnip.loaders.from_vscode")
+local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 
 cmp.setup({
   snippet = {
@@ -65,5 +64,4 @@ cmp.setup.cmdline(":", {
 })
 
 autopairs.setup({ check_ts = true })
-cmp.event:on("confirm_done", completion_cmp.on_confirm_done())
-from_vscode.lazy_load()
+cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
