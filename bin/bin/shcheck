@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
-shellharden --replace "$1"
-shfmt --write --indent 2 "$1"
-shellcheck "$1"
+if [[ $# -lt 1 ]]; then
+  echo "Usage: $0 <files>"
+  exit
+fi
+
+for file in "$@"; do
+  shellharden --replace "$file"
+  shfmt --write --indent 2 "$file"
+  shellcheck "$file"
+done
