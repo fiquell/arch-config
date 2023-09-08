@@ -1,6 +1,14 @@
 #!/usr/bin/env fish
 #
-# Fiquell's fish environment
+# Fiquell's Fish shell environment
+
+# Set global environment variables
+set -gx EDITOR "nvim"
+set -gx MANPAGER "nvim +Man!"
+set -gx FZF_DEFAULT_OPTS "--margin 20% --info inline-right --color 16,bg+:#1a1b26"
+
+# Add custom paths to the PATH variable
+set -gx PATH "$HOME/.cargo/bin" "$HOME/.local/bin" "$HOME/bin" $PATH
 
 # Welcome message
 function fish_greeting
@@ -11,29 +19,30 @@ end
 starship init fish | source
 
 # Aliases
-alias cat="bat --theme base16 --style changes,numbers"
-alias cs="xclip -selection clipboard"
-alias grep="grep --color=always"
+alias cat "bat --theme base16 --style changes,numbers"
+alias cs "xclip -selection clipboard"
+alias grep "grep --color=always"
 
-# Changed "ls" to "exa"
-alias ls="exa --all --long --color=always --group-directories-first"
-alias la="exa --all --color=always --group-directories-first"
-alias lt="exa --all --tree --color=always --group-directories-first"
+# Use "exa" instead of "ls" with custom options
+alias ls "exa --all --long --color=always --group-directories-first"
+alias la "exa --all --color=always --group-directories-first"
+alias lt "exa --all --tree --color=always --group-directories-first"
 
-# Git related commands
-alias ga="git add"
-alias gb="git branch"
-alias gc="git commit"
-alias gd="git diff"
-alias gl="git lg"
-alias gs="git st"
-alias gpl="git pull"
-alias gps="git push"
-alias gco="git checkout"
+# Git aliases
+alias ga "git add"
+alias gb "git branch"
+alias gc "git commit"
+alias gd "git diff"
+alias gl "git lg"
+alias gs "git st"
+alias gpl "git pull"
+alias gps "git push"
+alias gco "git checkout"
 
 # Themes
 # - https://github.com/folke/tokyonight.nvim/raw/main/extras/fish/tokyonight_night.fish
 
+# Define custom colors for Fish shell
 set -l foreground c0caf5
 set -l selection 283457
 set -l comment 565f89
@@ -45,7 +54,7 @@ set -l purple 9d7cd8
 set -l cyan 7dcfff
 set -l pink bb9af7
 
-# Syntax Highlighting Colors
+# Set syntax highlighting colors
 set -g fish_color_normal $foreground
 set -g fish_color_command $cyan
 set -g fish_color_keyword $pink
@@ -61,7 +70,7 @@ set -g fish_color_operator $green
 set -g fish_color_escape $pink
 set -g fish_color_autosuggestion $comment
 
-# Completion Pager Colors
+# Set completion pager colors
 set -g fish_pager_color_progress $comment
 set -g fish_pager_color_prefix $cyan
 set -g fish_pager_color_completion $foreground

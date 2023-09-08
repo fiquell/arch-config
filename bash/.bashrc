@@ -1,24 +1,26 @@
 #!/usr/bin/env bash
 #
-# Fiquell's bash environment
+# Fiquell's Bash shell environment
 
-# Replaces current shell process with Fish shell
-if command -v fish &>/dev/null; then
-  SHELL=$(command -v fish)
-  exec "$SHELL"
-fi
+# Set global environment variables
+export EDITOR="nvim"
+export MANPAGER="nvim +Man!"
+export FZF_DEFAULT_OPTS="--margin 20% --info inline-right --color 16,bg+:#1a1b26"
+
+# Add custom paths to the PATH variable
+export PATH="$HOME/.cargo/bin:$HOME/.local/bin:$HOME/bin:$PATH"
 
 # Aliases
 alias cat="bat --theme base16 --style changes,numbers"
 alias cs="xclip -selection clipboard"
 alias grep="grep --color=always"
 
-# Changed "ls" to "exa"
+# Use "exa" instead of "ls" with custom options
 alias ls="exa --all --long --color=always --group-directories-first"
 alias la="exa --all --color=always --group-directories-first"
 alias lt="exa --all --tree --color=always --group-directories-first"
 
-# Git related commands
+# Git aliases
 alias ga="git add"
 alias gb="git branch"
 alias gc="git commit"
