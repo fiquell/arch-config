@@ -12,12 +12,14 @@ return packer.startup({
     use("nvim-lualine/lualine.nvim")
     use("ThePrimeagen/harpoon")
     use("RRethy/vim-illuminate")
-    use("numToStr/Comment.nvim")
     use("folke/neodev.nvim")
     use("lukas-reineke/indent-blankline.nvim")
     use("stevearc/oil.nvim")
     use({ "codota/tabnine-nvim", run = "./dl_binaries.sh" })
     use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install" })
+
+    use("numToStr/Comment.nvim")
+    use("JoosepAlviste/nvim-ts-context-commentstring")
 
     use("nvim-treesitter/nvim-treesitter")
     use("nvim-treesitter/playground")

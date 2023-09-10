@@ -1,14 +1,10 @@
 local has_comment, comment = pcall(require, "Comment")
+local has_commentstring, commentstring = pcall(require, "ts_context_commentstring.integrations.comment_nvim")
 
-if not has_comment then
+if not has_comment and not has_commentstring then
   return
 end
 
-local utils = require("Comment.utils")
-
 comment.setup({
-  pre_hook = function(ctx)
-    local lines = utils.get_lines(ctx.range)
-    vim.fn.setreg("+", lines)
-  end,
+  pre_hook = commentstring.create_pre_hook(),
 })
