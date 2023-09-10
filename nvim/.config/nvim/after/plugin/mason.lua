@@ -15,6 +15,7 @@ local servers = {
   "jsonls",
   "lua_ls",
   "marksman",
+  "rust_analyzer",
   "svelte",
   "tailwindcss",
   "taplo",

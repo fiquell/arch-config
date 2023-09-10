@@ -8,7 +8,7 @@ lspsaga.setup({
   ui = {
     border = "rounded",
     title = false,
-    code_action = "~",
+    code_action = "λ",
   },
   lightbulb = {
     virtual_text = false,

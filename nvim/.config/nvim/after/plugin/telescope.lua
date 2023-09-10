@@ -5,19 +5,16 @@ if not has_telescope then
 end
 
 local builtin = require("telescope.builtin")
+local themes = require("telescope.themes")
 
 telescope.setup({
-  pickers = {
-    find_files = {
-      find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
-    },
-  },
+  defaults = vim.tbl_extend("force", themes.get_ivy(), {
+    preview = false,
+    results_title = false,
+  }),
 })
 
-vim.keymap.set("n", "<C-f>", builtin.current_buffer_fuzzy_find)
 vim.keymap.set("n", "<C-g>", builtin.live_grep)
-vim.keymap.set("n", "<C-p>", builtin.find_files)
-vim.keymap.set("n", "<C-t>", builtin.builtin)
-vim.keymap.set("n", "<Space>gb", builtin.git_branches)
-vim.keymap.set("n", "<Space>gc", builtin.git_commits)
-vim.keymap.set("n", "<Space>gs", builtin.git_status)
+vim.keymap.set("n", "<C-p>", builtin.git_files)
+vim.keymap.set("n", "<Space>bb", builtin.builtin)
+vim.keymap.set("n", "<Space>bh", builtin.help_tags)

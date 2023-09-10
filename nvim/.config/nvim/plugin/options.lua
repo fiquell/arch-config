@@ -8,10 +8,9 @@ vim.opt.sidescrolloff = 60
 vim.opt.signcolumn = "yes"
 vim.opt.swapfile = false
 vim.opt.termguicolors = true
-vim.opt.updatetime = 1000
+vim.opt.updatetime = 100
 vim.opt.wrap = false
 
--- Tabs
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2

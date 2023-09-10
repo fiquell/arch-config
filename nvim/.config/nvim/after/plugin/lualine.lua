@@ -15,7 +15,7 @@ lualine.setup({
   sections = {
     lualine_a = { "mode" },
     lualine_b = { "branch" },
-    lualine_c = { "diff", "diagnostics", "filename" },
+    lualine_c = { "diff", "filename" },
     lualine_x = { "filesize", "encoding", "fileformat", "filetype" },
     lualine_y = { "progress" },
     lualine_z = { "location" },

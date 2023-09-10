@@ -9,7 +9,7 @@ local ui = require("harpoon.ui")
 
 harpoon.setup({
   menu = {
-    width = 80,
+    width = 100,
     height = 12,
   },
 })

@@ -1,3 +1,9 @@
+local has_cmp, cmp = pcall(require, "cmp_nvim_lsp")
+
+if not has_cmp then
+  return
+end
+
 local lsp_formatting = function(bufnr)
   vim.lsp.buf.format({
     bufnr = bufnr,
@@ -14,19 +20,16 @@ local lsp_organize_imports = function(bufnr)
   })
 end
 
-local has_lsp, lsp = pcall(require, "cmp_nvim_lsp")
-
-if not has_lsp then
-  return
-end
-
 local M = {}
 
 M.setup = function()
   vim.diagnostic.config({
     virtual_text = {
-      prefix = "~",
+      prefix = "»",
     },
+    signs = false,
+    update_in_insert = true,
+    severity_sort = true,
   })
 end
 
@@ -45,6 +48,6 @@ M.on_attach = function(client, bufnr)
   end
 end
 
-M.capabilities = lsp.default_capabilities()
+M.capabilities = cmp.default_capabilities()
 
 return M
