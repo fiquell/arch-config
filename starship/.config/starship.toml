@@ -1,17 +1,9 @@
-format = "$directory$cmd_duration"
-right_format = "$git_branch$git_status$time"
+format = "$directory$git_branch$cmd_duration"
 add_newline = false
 
 [directory]
 format = "[$path](blue bold) "
 
-[git_branch]
-format = "[$symbol$branch]($style) "
-
-[git_status]
-format = "([$all_status$ahead_behind]($style) )"
-
-[time]
-disabled = false
-format = "[$time]($style)"
-time_format = "%a %d %b %Y %r"
+[cmd_duration]
+min_time = 500
+format = "underwent [$duration](yellow bold) "
