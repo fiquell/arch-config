@@ -1,6 +1,15 @@
 #!/usr/bin/env bash
 
-selected=${1:-$(find ~ ~/personal ~/work -mindepth 1 -maxdepth 1 -type d | fzf)}
+search_dirs=(
+  "$HOME"
+  "$HOME/personal"
+  "$HOME/work"
+)
+
+selected=$(
+  find "${search_dirs[@]}" -mindepth 1 -maxdepth 1 -type d |
+  fzf --reverse --margin 20% --info inline-right --color 16,bg+:#1a1b26
+)
 
 if [[ -z $selected ]]; then
   exit
