@@ -4,5 +4,6 @@
 [alias]
   lg = log --all --oneline --graph
   st = status --short --branch
+  yolo = !git commit -m \"$(curl -s https://whatthecommit.com/index.txt)\"
 [init]
   defaultBranch = main
