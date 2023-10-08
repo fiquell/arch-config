@@ -5,7 +5,15 @@
 # Prompt
 eval "$(starship init bash)"
 
-# Git related commands
+# Aliases
+alias cs="xclip -selection clipboard"
+alias rs="openssl rand -hex 32"
+alias la="exa -a --group-directories-first"
+alias ll="exa -l --group-directories-first"
+alias ls="exa -al --group-directories-first"
+alias lt="exa -aT --group-directories-first"
+
+# Git aliases
 alias ga="git add"
 alias gb="git branch"
 alias gc="git commit"
